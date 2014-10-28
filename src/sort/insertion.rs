@@ -21,7 +21,7 @@ pub fn insertion_sort_int(data : &mut [int]){
 
 
 /// Performs insertion sort on an array of type T
-pub fn insertion_sort_ord_copy<T : Ord + Copy>(data : &mut [T]){
+pub fn insertion_sort_ord_copy<T : PartialOrd + Copy>(data : &mut [T]){
     let n  = data.len();
     for j in range(1, n){
         let key = data[j];
@@ -39,7 +39,7 @@ pub fn insertion_sort_ord_copy<T : Ord + Copy>(data : &mut [T]){
     }
 }
 
-pub fn insertion_sort<T : Ord>(data : &mut [T]){
+pub fn insertion_sort<T : PartialOrd>(data : &mut [T]){
     let n  = data.len();
     for j in range(1, n){
         // we insert data[j] into the sorted sequence 
@@ -79,6 +79,13 @@ mod test {
     #[test]
     fn test2() {
         let mut x : [int, ..9] = [5,4,1,2,3, 10, 7, 8, 6];
+        insertion_sort(x);
+        assert!(is_ascending(x));
+    }
+
+    #[test]
+    fn test3() {
+        let mut x : [f64, ..9] = [5f64,4.,1.,2.,3., 10., 7., 8., 6.];
         insertion_sort(x);
         assert!(is_ascending(x));
     }
