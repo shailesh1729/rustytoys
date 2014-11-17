@@ -1,5 +1,6 @@
 pub mod sort;
 pub mod util;
+pub mod lang;
 
 #[test]
 fn it_works() {
