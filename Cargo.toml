@@ -1,6 +1,6 @@
 [package]
 
-name = "rustytoys"
+name = "rtoys"
 version = "0.0.1"
 authors = ["Shailesh Kumar <shailesh@indigits.com>"]
 
@@ -33,4 +33,7 @@ debug = true
 [lib]
 name = "rtoys"
 
+
+[[bin]]
+name = "rtoys_demo"
 
