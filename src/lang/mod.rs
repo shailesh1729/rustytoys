@@ -3,5 +3,6 @@
 
 
 pub mod unsafe_mod;
+pub mod module_structure;
 
 

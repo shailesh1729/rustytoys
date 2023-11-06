@@ -8,12 +8,12 @@ and then working with the pointer.
 "]
 #[test]
 pub fn ex_array_to_pointer(){
-    let a = [1i,2,3,4];
-    let p = &a[0] as *const int;
-    for i in range(0i, 4) {
+    let a = [1i32,2,3,4];
+    let p = &a[0] as *const i32;
+    for i in 0..4 {
         let v = unsafe{*p.offset(i)};
         println!("{}", v);
-        assert_eq!(v, i + 1);
+        assert_eq!(v, (i + 1) as i32);
     }
 }
 

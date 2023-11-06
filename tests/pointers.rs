@@ -3,14 +3,14 @@ extern crate rtoys;
 use std::ptr;
 
 
-fn succ(x: &int) -> int { *x + 1 }
+fn succ(x: &i32) -> i32 { *x + 1 }
 
 
 
 
 #[test]
 fn pointer0(){
-    let x = 5i;
+    let x: i32 = 5;
     let y = &x;
     assert_eq!(5, *y);
     println!("{:p}", y);
@@ -21,7 +21,7 @@ fn pointer0(){
 
 #[test]
 fn pointer1(){
-    let mut x = 5i;
+    let mut x : i32 = 5;
     let y = &mut x;
     succ(y);
     *y  = *y + 1;
@@ -32,13 +32,13 @@ fn pointer1(){
 
 #[test]
 fn raw_pointer0(){
-    let my_num: int = 10;
+    let my_num: i32 = 10;
     // Creating an unsafe pointer to a constant value
-    let my_num_ptr: *const int = &my_num;
+    let my_num_ptr: *const i32 = &my_num;
     // A mutable value
-    let mut my_speed: int = 88;
+    let mut my_speed: i32 = 88;
     // Creating an unsafe pointer to a mutable value
-    let my_speed_ptr: *mut int = &mut my_speed;
+    let my_speed_ptr: *mut i32 = &mut my_speed;
     assert_eq!(10, my_num);
     // Dereferencing from an unsafe pointer to constant value
     assert_eq!(10, unsafe{*my_num_ptr});
@@ -51,10 +51,10 @@ fn raw_pointer0(){
     assert_eq!(20, unsafe{*my_speed_ptr});
     assert_eq!(20, my_speed);
 
-    let p: *const int = ptr::null();
+    let p: *const i32 = ptr::null();
     assert!(p.is_null());
-    let x = p.to_uint();
+    let x = p as usize;
     assert!(x == 0);
-    assert!(my_speed_ptr.to_uint() != 0);
+    assert!(my_speed_ptr as usize != 0);
 }
 

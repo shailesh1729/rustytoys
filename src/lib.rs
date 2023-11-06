@@ -7,13 +7,13 @@ fn it_works() {
 }
 
 
-pub fn add_three_times_four(x: int) -> int {
+pub fn add_three_times_four(x: i32) -> i32 {
     times_four(add_three(x))
 }
 
-fn add_three(x: int) -> int { x + 3 }
+fn add_three(x: i32) -> i32 { x + 3 }
 
-fn times_four(x: int) -> int { x * 4 }
+fn times_four(x: i32) -> i32 { x * 4 }
 
 #[cfg(test)]
 mod test {
@@ -22,15 +22,15 @@ mod test {
 
     #[test]
     fn test_add_three() {
-        let result = add_three(5i);
+        let result = add_three(5i32);
 
-        assert_eq!(8i, result);
+        assert_eq!(8i32, result);
     }
 
     #[test]
     fn test_times_four() {
-        let result = times_four(5i);
+        let result = times_four(5i32);
 
-        assert_eq!(20i, result);
+        assert_eq!(20i32, result);
     }
 }

@@ -7,7 +7,7 @@ fn foo() {
 
 #[test]
 fn math_checks_out() {
-    let result = rtoys::add_three_times_four(5i);
+    let result = rtoys::add_three_times_four(5i32);
 
-    assert_eq!(32i, result);
+    assert_eq!(32, result);
 }

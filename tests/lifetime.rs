@@ -17,7 +17,7 @@ fn lifetime0(){
     let on_the_stack : Point      =     Point {x: 3.0, y: 4.0};
     assert_eq!(on_the_stack.x , 3.0);
     assert_eq!(on_the_stack.y , 4.0);
-    let on_the_heap  : Box<Point> = box Point {x: 7.0, y: 7.0};
+    let on_the_heap  : Box<Point> = Box::new(Point {x: 7.0, y: 7.0});
     assert_eq!(on_the_heap.x , 7.0);
     let distance = compute_distance(&on_the_stack, &*on_the_heap);
     assert_eq!(distance, 5.0);
