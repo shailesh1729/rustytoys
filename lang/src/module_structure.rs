@@ -26,7 +26,7 @@ pub mod impl_b{
 
   //use crate::lang::module_structure::xxx;
   //use crate::lang::module_structure::xxx::A;
-  use crate::lang::module_structure::xxx::yyy::trait_b::B;
+  use crate::module_structure::xxx::yyy::trait_b::B;
   use super::super::X;
   
   impl B for X {
@@ -43,9 +43,9 @@ pub mod impl_b{
 #[test]
 pub fn test_dependencies(){
 
-  use crate::lang::module_structure::xxx;
-  use crate::lang::module_structure::xxx::A;
-  use crate::lang::module_structure::xxx::yyy::trait_b::B;
+  use crate::module_structure::xxx;
+  use crate::module_structure::xxx::A;
+  use crate::module_structure::xxx::yyy::trait_b::B;
 
     let x1 = xxx::X{x:20};
     println!("{}", x1.x);

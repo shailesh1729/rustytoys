@@ -1,19 +1,17 @@
-pub mod sort;
-pub mod util;
-pub mod lang;
+#![doc="Examples demonstrating language features."]
 
-#[test]
-fn it_works() {
-}
 
+pub mod unsafe_mod;
+pub mod module_structure;
+
+fn add_three(x: i32) -> i32 { x + 3 }
+
+fn times_four(x: i32) -> i32 { x * 4 }
 
 pub fn add_three_times_four(x: i32) -> i32 {
     times_four(add_three(x))
 }
 
-fn add_three(x: i32) -> i32 { x + 3 }
-
-fn times_four(x: i32) -> i32 { x * 4 }
 
 #[cfg(test)]
 mod test {

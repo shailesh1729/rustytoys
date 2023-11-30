@@ -6,6 +6,7 @@ members = [
     "util",
     "sort",
     "main",
+    "mandelbrot",
 ]
 
 # The development profile, used for `cargo build`
