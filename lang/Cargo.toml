@@ -1,12 +1,10 @@
-[workspace]
-resolver = "2"
+[package]
 
-members = [
-    "lang",
-    "util",
-    "sort",
-    "main",
-]
+name = "rtoys"
+version = "0.0.2"
+edition = "2021"
+authors = ["Shailesh Kumar <shailesh@indigits.com>"]
+
 
 # The development profile, used for `cargo build`
 [profile.dev]
@@ -27,3 +25,7 @@ debug = true
 [profile.bench]
 opt-level = 3
 debug = false
+
+[lib]
+name = "rtoys"
+

@@ -10,3 +10,15 @@ pub fn is_ascending<T : PartialOrd>(data : & [T]) -> bool {
     }
     true
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        let x = [1,2,3, 4];
+        let result = is_ascending(&x);
+        assert_eq!(result, true);
+    }
+}
